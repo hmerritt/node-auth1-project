@@ -1,5 +1,9 @@
 const db = require("./dbConnect");
 
+function getAll(table) {
+    return db(table);
+}
+
 function findBy(col, value) {
     return db("users").where(value, col);
 }
@@ -16,4 +20,4 @@ async function add(user) {
     return id;
 }
 
-module.exports = { findBy, findById, add };
+module.exports = { getAll, findBy, findById, add };
