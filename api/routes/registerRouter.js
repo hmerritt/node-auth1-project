@@ -1,5 +1,6 @@
 const express = require("express");
 const bcrypt = require("bcryptjs");
+const Users = require("../db/Users");
 
 const router = express.Router();
 
@@ -13,8 +14,16 @@ router.post("/", async (req, res, next) => {
     // Replace plain-text pass with hashed one
     user.password = hash;
 
-    //
-    // add user to db
+    // Add user to db
+    Users.add(user)
+        .then((dbUser) => {
+            res.json({
+                id: dbUser,
+                username: user.username,
+                password: user.password,
+            });
+        })
+        .catch((error) => next(error));
 });
 
 module.exports = router;
