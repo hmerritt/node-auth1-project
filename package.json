@@ -4,6 +4,7 @@
   "description": "introduction-to-authentication",
   "main": "index.js",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "gulp": "^4.0.2",
     "gulp-prettier": "^3.0.0",
