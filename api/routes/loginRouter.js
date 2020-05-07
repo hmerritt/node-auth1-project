@@ -13,10 +13,17 @@ router.post("/", async (req, res, next) => {
         .then(([dbUser]) => {
             // Compare password with one stored in db
             if (dbUser && bcrypt.compareSync(user.password, dbUser.password)) {
-                res.send({ hello: dbUser.username });
+                // Remember user
+                req.session.user = {
+                    id: dbUser.id,
+                    username: dbUser.username,
+                };
+                console.log(req.session);
+
+                res.send({ message: `Logged in: ${dbUser.username}` });
             } else {
                 // Passwords did not match :(
-                res.status(401).json({ message: "invalid credentials" });
+                res.status(401).json({ message: "You shall not pass!" });
             }
         })
         .catch((error) => {
