@@ -1,0 +1,32 @@
+{
+  "name": "introduction-to-authentication",
+  "version": "1.0.0",
+  "description": "introduction-to-authentication",
+  "main": "index.js",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "gulp": "^4.0.2",
+    "gulp-prettier": "^3.0.0",
+    "knex": "^0.21.1",
+    "knex-cleaner": "^1.3.0",
+    "nodemon": "^2.0.3",
+    "sqlite3": "^4.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hmerritt/node-auth1-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hmerritt/node-auth1-project/issues"
+  },
+  "homepage": "https://github.com/hmerritt/node-auth1-project#readme"
+}
